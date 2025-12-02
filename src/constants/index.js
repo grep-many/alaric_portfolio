@@ -1,22 +1,26 @@
-import { About, Contact, Projects } from "../pages";
-import { dialog1, dialog2, dialog3, dialog4 } from "./dialogContents";
+import { About, Contact, Projects } from '../pages';
+import { dialog1, dialog2, dialog3, dialog4 } from './dialogContents';
+import { experiences } from './experience';
+import { skills } from './skills';
+import { projects } from './projects';
+import { socialLinks } from './social';
 
 const navigation = [
   {
-    name: "About",
-    path: "about",
+    name: 'About',
+    path: 'about',
     Component: About,
     nav: true,
   },
   {
-    name: "Projects",
-    path: "projects",
+    name: 'Projects',
+    path: 'projects',
     Component: Projects,
     nav: true,
   },
   {
-    name: "Contact",
-    path: "contact",
+    name: 'Contact',
+    path: 'contact',
     Component: Contact,
     nav: false,
   },
@@ -33,4 +37,14 @@ const DialogContent = {
   4: dialog4,
 };
 
-export { navigation, DialogContent, serviceId, templateId, publicId };
+export {
+  navigation,
+  DialogContent,
+  serviceId,
+  templateId,
+  publicId,
+  socialLinks,
+  skills,
+  projects,
+  experiences
+};
