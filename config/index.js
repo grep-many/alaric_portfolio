@@ -1,4 +1,5 @@
-const name = 'Alaric';
-const baseName = 'alaric_portfolio';
+const name = "Alaric";
+const email = "alaric@example.com";
+const baseName = "alaric_portfolio";
 
-export { name, baseName };
+export { name, email, baseName };

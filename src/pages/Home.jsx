@@ -1,8 +1,8 @@
-import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import Loader from '@/components/Loader';
-import { Bird, Island, Plane, Sky } from '@/models';
-import HomeInfo from '@/components/HomeInfo';
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import Loader from "@/components/Loader";
+import { Bird, Island, Plane, Sky } from "@/models";
+import HomeInfo from "@/components/HomeInfo";
 
 const Home = () => {
   const [currentStage, setCurrentStage] = React.useState(1);
@@ -35,11 +35,11 @@ const Home = () => {
 
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
-  
+
   return (
     <section className="w-full h-screen relative">
       <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        {currentStage&&<HomeInfo currentStage={currentStage}/>}
+        {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       <Canvas
         className="w-full h-screen bg-transparent"

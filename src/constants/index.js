@@ -1,55 +1,30 @@
-import { About, Contact, Projects } from '../pages';
-import { dialog1, dialog2, dialog3, dialog4 } from './dialogContents';
+import { About, Contact, Projects } from "../pages";
+import { dialog1, dialog2, dialog3, dialog4 } from "./dialogContents";
 
 const navigation = [
   {
-    name: 'About',
-    path: 'about',
-    Page: About,
+    name: "About",
+    path: "about",
+    Component: About,
     nav: true,
   },
   {
-    name: 'Projects',
-    path: 'projects',
-    Page: Projects,
+    name: "Projects",
+    path: "projects",
+    Component: Projects,
     nav: true,
   },
   {
-    name: 'Contact',
-    path: 'contact',
-    Page: Contact,
+    name: "Contact",
+    path: "contact",
+    Component: Contact,
     nav: false,
   },
 ];
 
-const InfoContent = {
-  1: {
-    paragraphs: [
-      'Worked with many companies',
-      'and picked up many skills along the way',
-    ],
-    linkText: 'Learn more',
-    path: '/about',
-  },
-
-  2: {
-    paragraphs: [
-      'Led multiple projects to success over the years.',
-      'Curious about the impact?',
-    ],
-    linkText: 'Visit my portfolio',
-    path: '/projects',
-  },
-
-  3: {
-    paragraphs: [
-      'Need a project done or looking for a dev?',
-      "I'm just a few keystrokes away",
-    ],
-    linkText: "Let's talk",
-    path: '/contact',
-  },
-};
+const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+const publicId = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
 const DialogContent = {
   1: dialog1,
@@ -58,4 +33,4 @@ const DialogContent = {
   4: dialog4,
 };
 
-export { navigation, DialogContent };
+export { navigation, DialogContent, serviceId, templateId, publicId };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { DialogContent } from '../constants';
+import React from "react";
+import { DialogContent } from "../constants";
 
 const HomeInfo = ({ currentStage }) => {
   const Component = React.useMemo(() => {

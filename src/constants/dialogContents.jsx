@@ -1,6 +1,7 @@
-import { Link } from 'react-router';
-import { arrow } from '../assets/icons';
-import { name } from '~/config';
+/* eslint-disable react-refresh/only-export-components */
+import { Link } from "react-router";
+import { arrow } from "../assets/icons";
+import { name } from "~/config";
 
 export const dialog1 = () => (
   <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
@@ -31,36 +32,35 @@ const InfoBox = ({ paragraphs = [], linkText, path }) => {
   );
 };
 
-
 const info = {
   1: {
     paragraphs: [
-      'Worked with many companies',
-      'and picked up many skills along the way',
+      "Worked with many companies",
+      "and picked up many skills along the way",
     ],
-    linkText: 'Learn more',
-    path: '/about',
+    linkText: "Learn more",
+    path: "/about",
   },
 
   2: {
     paragraphs: [
-      'Led multiple projects to success over the years.',
-      'Curious about the impact?',
+      "Led multiple projects to success over the years.",
+      "Curious about the impact?",
     ],
-    linkText: 'Visit my portfolio',
-    path: '/projects',
+    linkText: "Visit my portfolio",
+    path: "/projects",
   },
 
   3: {
     paragraphs: [
-      'Need a project done or looking for a dev?',
+      "Need a project done or looking for a dev?",
       "I'm just a few keystrokes away",
     ],
     linkText: "Let's talk",
-    path: '/contact',
+    path: "/contact",
   },
 };
 
-export const dialog2 = ()=><InfoBox {...info[1]}/>
-export const dialog3 = ()=><InfoBox {...info[2]}/>
-export const dialog4 = ()=><InfoBox {...info[3]}/>
+export const dialog2 = () => <InfoBox {...info[1]} />;
+export const dialog3 = () => <InfoBox {...info[2]} />;
+export const dialog4 = () => <InfoBox {...info[3]} />;

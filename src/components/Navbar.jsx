@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router';
-import { name } from '~/config';
-import { navigation } from '@/constants';
-import extractInitials from '@/lib';
+import { NavLink } from "react-router";
+import { name } from "~/config";
+import { navigation } from "@/constants";
+import extractInitials from "@/lib";
 
 const Navbar = () => (
   <header className="header">
@@ -20,7 +20,7 @@ const Navbar = () => (
             key={i}
             to={`/${path}`}
             className={({ isActive }) =>
-              isActive ? 'text-blue-500' : 'text-black'
+              isActive ? "text-blue-500" : "text-black"
             }
           >
             {name}

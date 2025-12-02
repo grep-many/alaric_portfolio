@@ -6,7 +6,7 @@ const extractInitials = (str) =>
         .filter(Boolean)
         .map((w) => w[0]?.toUpperCase())
         .slice(0, 2)
-        .join('')
-    : '';
+        .join("")
+    : "";
 
 export default extractInitials;

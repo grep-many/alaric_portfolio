@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { useAnimations, useGLTF } from '@react-three/drei';
+import { useEffect, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useAnimations, useGLTF } from "@react-three/drei";
 
-import birdScene from '../assets/3d/bird.glb';
+import birdScene from "../assets/3d/bird.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
 export default function Bird() {
@@ -18,8 +18,8 @@ export default function Bird() {
   // Note: Animation names can be found on the Sketchfab website where the 3D model is hosted.
   useEffect(() => {
     if (birdRef?.current === undefined) return;
-    actions['Take 001'].play();
-  }, [scene]);
+    actions["Take 001"].play();
+  }, [actions]);
 
   useFrame(({ clock, camera }) => {
     // Update the Y position to simulate bird-like motion using a sine wave

@@ -1,17 +1,18 @@
-import { a } from '@react-spring/three';
-import { useEffect, useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
+// eslint-disable-next-line no-unused-vars
+import { a } from "@react-spring/three";
+import React from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
 
-import islandScene from '../assets/3d/island.glb';
+import islandScene from "../assets/3d/island.glb";
 
 export default function Island({ setCurrentStage, ...props }) {
-  const islandRef = useRef();
+  const islandRef = React.useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
 
-  const lastX = useRef(null);
-  const rotationSpeed = useRef(0);
+  const lastX = React.useRef(null);
+  const rotationSpeed = React.useRef(0);
   const dampingFactor = 0.95;
   const idleRotationSpeed = 0.00065 * Math.PI;
 
@@ -24,19 +25,22 @@ export default function Island({ setCurrentStage, ...props }) {
     lastX.current = e.clientX || e.touches[0].clientX;
   };
 
-  const handlePointerMove = (e) => {
-    if (lastX.current === null) return;
+  const handlePointerMove = React.useCallback(
+    (e) => {
+      if (lastX.current === null) return;
 
-    e.preventDefault();
-    e.stopPropagation();
+      e.preventDefault();
+      e.stopPropagation();
 
-    const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-    const delta = (clientX - lastX.current) / viewport.width;
+      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+      const delta = (clientX - lastX.current) / viewport.width;
 
-    // Reduce sensitivity: multiply by 0.3 instead of 1
-    rotationSpeed.current += delta * Math.PI * 0.003;
-    lastX.current = clientX;
-  };  
+      // Reduce sensitivity: multiply by 0.3 instead of 1
+      rotationSpeed.current += delta * Math.PI * 0.003;
+      lastX.current = clientX;
+    },
+    [viewport.width],
+  );
 
   const handlePointerUp = (e) => {
     e.preventDefault();
@@ -48,9 +52,9 @@ export default function Island({ setCurrentStage, ...props }) {
   // Keyboard handlers
   // ----------------------
   const handleKeyDown = (e) => {
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+    if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
       rotationSpeed.current += 0.003;
-    } else if (e.key === 'ArrowRight'||e.key === 'ArrowUp') {
+    } else if (e.key === "ArrowRight" || e.key === "ArrowUp") {
       rotationSpeed.current -= 0.003;
     }
   };
@@ -58,31 +62,31 @@ export default function Island({ setCurrentStage, ...props }) {
   // ----------------------
   // Event listeners
   // ----------------------
-  useEffect(() => {
+  React.useEffect(() => {
     const canvas = gl.domElement;
 
-    canvas.addEventListener('pointerdown', handlePointerDown);
-    canvas.addEventListener('pointermove', handlePointerMove);
-    canvas.addEventListener('pointerup', handlePointerUp);
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    canvas.addEventListener("pointermove", handlePointerMove);
+    canvas.addEventListener("pointerup", handlePointerUp);
 
-    canvas.addEventListener('touchstart', handlePointerDown);
-    canvas.addEventListener('touchmove', handlePointerMove);
-    canvas.addEventListener('touchend', handlePointerUp);
+    canvas.addEventListener("touchstart", handlePointerDown);
+    canvas.addEventListener("touchmove", handlePointerMove);
+    canvas.addEventListener("touchend", handlePointerUp);
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      canvas.removeEventListener('pointerup', handlePointerUp);
+      canvas.removeEventListener("pointerdown", handlePointerDown);
+      canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.removeEventListener("pointerup", handlePointerUp);
 
-      canvas.removeEventListener('touchstart', handlePointerDown);
-      canvas.removeEventListener('touchmove', handlePointerMove);
-      canvas.removeEventListener('touchend', handlePointerUp);
+      canvas.removeEventListener("touchstart", handlePointerDown);
+      canvas.removeEventListener("touchmove", handlePointerMove);
+      canvas.removeEventListener("touchend", handlePointerUp);
 
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [gl]);
+  }, [gl, handlePointerMove]);
 
   // ----------------------
   // Frame updates
@@ -106,7 +110,7 @@ export default function Island({ setCurrentStage, ...props }) {
 
     switch (true) {
       case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-        setCurrentStage(4 );
+        setCurrentStage(4);
         break;
       case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
         setCurrentStage(3);
