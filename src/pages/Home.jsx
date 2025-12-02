@@ -6,7 +6,6 @@ import HomeInfo from "@/components/HomeInfo";
 
 const Home = () => {
   const [currentStage, setCurrentStage] = React.useState(1);
-
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
 

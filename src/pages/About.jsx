@@ -57,11 +57,11 @@ const About = () => (
                 isLeft={i % 2 === 0}
                 iconStyle={{ background: iconBg }}
                 icon={
-                  <div className="flex justify-center items-center w-full h-full shadow-[inset_0_6px_12px_rgba(0,0,0,0.20)] rounded-full">
+                  <div className="flex justify-center items-center size-full shadow-[inset_0_6px_12px_rgba(0,0,0,0.20)] rounded-full">
                     <img
                       src={icon}
                       alt={company_name}
-                      className="w-[60%] h-[60%] object-contain"
+                      className="size-[60%] object-contain"
                     />
                   </div>
                 }
