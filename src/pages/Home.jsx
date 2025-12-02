@@ -1,10 +1,16 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
-import Loader from "@/components/Loader";
-import { Bird, Island, Plane, Sky } from "@/models";
-import HomeInfo from "@/components/HomeInfo";
+import React from 'react';
+import { Canvas } from '@react-three/fiber';
+import Loader from '@/components/Loader';
+import { Bird, Island, Plane, Sky } from '@/models';
+import HomeInfo from '@/components/HomeInfo';
+import sakura from '@/assets/sakura.mp3';
+import { soundoff, soundon } from '../assets/icons';
 
 const Home = () => {
+  const audioRef = React.useRef(new Audio(sakura));
+  const soundRef = React.useRef(null);
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
   const [currentStage, setCurrentStage] = React.useState(1);
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -32,6 +38,19 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
+  const handleSound = () => {
+    if (!soundRef?.current || !audioRef?.current) return;
+    if (audioRef.current.paused) {
+      audioRef.current.play();
+      soundRef.current.src = soundon;
+      return;
+    }
+    soundRef.current.src = soundoff;
+    audioRef.current.pause();
+  };
+
+  console.log('render');
+
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
 
@@ -41,7 +60,7 @@ const Home = () => {
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       <Canvas
-        className="w-full h-screen bg-transparent"
+        className="w-full h-full bg-transparent"
         camera={{ near: 0.1, far: 1000 }}
       >
         <React.Suspense fallback={<Loader />}>
@@ -74,6 +93,15 @@ const Home = () => {
           />
         </React.Suspense>
       </Canvas>
+      <button className="fixed bottom-4 right-4 rounded-full">
+        <img
+          ref={soundRef}
+          src={soundoff}
+          alt="jukebox"
+          onClick={handleSound}
+          className="size-10 cursor-pointer object-contain hover:size-12 active:size-10.5 motion-safe:duration-100"
+        />
+      </button>
     </section>
   );
 };

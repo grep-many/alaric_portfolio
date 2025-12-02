@@ -22,7 +22,7 @@ const About = () => (
 
     <div className="py-10 flex flex-col">
       <h3 className="subhead-text">My Skills</h3>
-      <div className="mt-16 flex flex-wrap gap-12">
+      <div className="mt-16 flex flex-wrap justify-center items-center gap-20">
         {skills.map(({ name, imageUrl }) => (
           <div key={imageUrl} className="block-container size-20">
             <div className="btn-back rounded-xl" />
@@ -100,8 +100,8 @@ const About = () => (
         </Timeline>
       </div>
     </div>
-    <hr className='border-slate-200' />
-    <CTA/>
+    <hr className="border-slate-200" />
+    <CTA />
   </section>
 );
 
