@@ -49,8 +49,6 @@ const Home = () => {
     audioRef.current.pause();
   };
 
-  console.log('render');
-
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
 

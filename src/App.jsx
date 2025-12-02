@@ -1,10 +1,19 @@
-import { Navigate, Route, Routes } from "react-router";
-import Navbar from "@/components/Navbar";
-import { navigation } from "@/constants";
-import Home from "@/pages/Home";
+import { Navigate, Route, Routes } from 'react-router';
+import Navbar from '@/components/Navbar';
+import { navigation } from '@/constants';
+import { Home } from '@/pages';
+import React from 'react';
+import Loader from './components/Loader';
+import Footer from './components/Footer';
 
 const App = () => (
-  <>
+  <React.Suspense
+    fallback={
+      <div className="h-screen">
+        <Loader R3F={false} />
+      </div>
+    }
+  >
     <Navbar />
     <main>
       <Routes>
@@ -18,7 +27,8 @@ const App = () => (
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </main>
-  </>
+    <Footer/>
+  </React.Suspense>
 );
 
 export default App;
