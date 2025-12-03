@@ -34,7 +34,7 @@ jobs:
           echo "VITE_APP_EMAILJS_SERVICE_ID=${{ secrets.VITE_APP_EMAILJS_SERVICE_ID }}" >> .env
           echo "VITE_APP_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_APP_EMAILJS_TEMPLATE_ID }}" >> .env
           echo "VITE_APP_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_APP_EMAILJS_PUBLIC_KEY }}" >> .env
-  
+
       - name: Build the VITE app
         run: npm run build
 
@@ -56,4 +56,3 @@ jobs:
       - name: Deploying to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-          

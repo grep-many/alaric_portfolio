@@ -18,12 +18,12 @@ Features immersive 3D scenes, smooth page transitions, and a working EmailJS con
 
 You get:
 
-* 🌄 **Interactive 3D hero section** powered by React Three Fiber
-* 🐦 3D models like **Island, Bird, Plane, Sky, Fox**
-* 🎭 Smooth animations with **React Spring (three)**
-* 📩 Working EmailJS-powered contact form
-* 🧭 Multi-page routing via **React Router v7**
-* 🚀 Ultra-fast bundling using **Vite 7**
+- 🌄 **Interactive 3D hero section** powered by React Three Fiber
+- 🐦 3D models like **Island, Bird, Plane, Sky, Fox**
+- 🎭 Smooth animations with **React Spring (three)**
+- 📩 Working EmailJS-powered contact form
+- 🧭 Multi-page routing via **React Router v7**
+- 🚀 Ultra-fast bundling using **Vite 7**
 
 ---
 
@@ -37,24 +37,24 @@ You get:
 
 ### **Frontend**
 
-* React 19
-* React Router v7
-* Vite 7
-* TailwindCSS 4
-* React Spring (Three)
-* EmailJS Browser SDK
+- React 19
+- React Router v7
+- Vite 7
+- TailwindCSS 4
+- React Spring (Three)
+- EmailJS Browser SDK
 
 ### **3D & Animation**
 
-* @react-three/fiber
-* @react-three/drei
-* @react-spring/three
+- @react-three/fiber
+- @react-three/drei
+- @react-spring/three
 
 ### **Developer Tools**
 
-* ESLint 9
-* Prettier 3 + Tailwind Prettier plugin
-* SWC React plugin
+- ESLint 9
+- Prettier 3 + Tailwind Prettier plugin
+- SWC React plugin
 
 ---
 
@@ -119,14 +119,14 @@ npm run dev
 
 ## 🚀 Features
 
-* 🌐 **3D Hero Experience** using GLTF models
-* 🕊️ Animated bird, plane, fox & island environments
-* 🎬 Page transitions with spring animations
-* 📱 Fully responsive modern UI
-* 🧭 Multi-page **React Router 7**
-* 🎨 TailwindCSS 4 utility-first styling
-* 💌 EmailJS contact integration
-* ⚡ Vite-powered fast dev/build
+- 🌐 **3D Hero Experience** using GLTF models
+- 🕊️ Animated bird, plane, fox & island environments
+- 🎬 Page transitions with spring animations
+- 📱 Fully responsive modern UI
+- 🧭 Multi-page **React Router 7**
+- 🎨 TailwindCSS 4 utility-first styling
+- 💌 EmailJS contact integration
+- ⚡ Vite-powered fast dev/build
 
 ---
 
@@ -137,12 +137,7 @@ Integrated using:
 ```js
 import emailjs from "@emailjs/browser";
 
-emailjs.send(
-  serviceID,
-  templateID,
-  params,
-  publicKey
-);
+emailjs.send(serviceID, templateID, params, publicKey);
 ```
 
 Configure via `.env` variables shown above.
