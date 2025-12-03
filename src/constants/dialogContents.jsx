@@ -12,25 +12,23 @@ export const dialog1 = () => (
   </h1>
 );
 
-const InfoBox = ({ paragraphs = [], linkText, path }) => {
-  return (
-    <div className="info-box">
-      <p className="font-medium sm:text-xl text-center">
-        {paragraphs.map((line, i) => (
-          <span key={i}>
-            {line}
-            {i < paragraphs.length - 1 && <br />}
-          </span>
-        ))}
-      </p>
+const InfoBox = ({ paragraphs = [], linkText, path }) => (
+  <div className="info-box">
+    <p className="font-medium sm:text-xl text-center">
+      {paragraphs.map((line, i) => (
+        <span key={i}>
+          {line}
+          {i < paragraphs.length - 1 && <br />}
+        </span>
+      ))}
+    </p>
 
-      <Link to={path} className="neo-brutalism-white neo-btn">
-        {linkText}
-        <img src={arrow} alt="arrow" className="size-4 object-contain" />
-      </Link>
-    </div>
-  );
-};
+    <Link to={path} className="neo-brutalism-white neo-btn">
+      {linkText}
+      <img src={arrow} alt="arrow" className="size-4 object-contain" />
+    </Link>
+  </div>
+);
 
 const info = {
   1: {

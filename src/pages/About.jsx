@@ -1,14 +1,14 @@
-import { name } from '~/config';
-import { experiences, skills } from '../constants';
-import { Timeline, TimelineItem } from '../components/timeline';
-import CTA from '../components/CTA';
+import { name } from "~/config";
+import { experiences, skills } from "../constants";
+import { Timeline, TimelineItem } from "../components/timeline";
+import CTA from "../components/CTA";
 
 const About = () => (
   <section className="max-container">
     <h1 className="head-text">
-      Hello, I'm{' '}
+      Hello, I'm
       <span className="blue-gradient_text font-semibold drop-shadow">
-        {name.split(' ')[0]}
+        {name.split(" ")[0]}
       </span>
       👋
     </h1>
@@ -66,10 +66,10 @@ const About = () => (
                   </div>
                 }
                 contentStyle={{
-                  borderBottom: '8px',
-                  borderStyle: 'solid',
+                  borderBottom: "8px",
+                  borderStyle: "solid",
                   borderBottomColor: iconBg,
-                  boxShadow: 'none',
+                  boxShadow: "none",
                 }}
               >
                 <div>

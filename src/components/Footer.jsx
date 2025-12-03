@@ -1,10 +1,10 @@
-import { Link, useLocation } from 'react-router';
-import { socialLinks } from '../constants';
-import { name } from '~/config';
+import { Link, useLocation } from "react-router";
+import { socialLinks } from "../constants";
+import { name } from "~/config";
 
 const Footer = () => {
   const location = useLocation();
-  if ((location.pathname ==='/')) return;
+  if (location.pathname === "/") return;
   return (
     <footer className="footer font-poppins">
       <hr className="border-slate-200" />

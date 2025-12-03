@@ -1,15 +1,15 @@
 import { Link } from "react-router";
 
-const CTA = () => {
-  return (
-    <section className="cta">
-      <p className="cta-text">
-        Have a project in mind? <br className="sm:block hidden" /> Let’s build
-        something together! Contact
-      </p>
-      <Link to="/contact" className="btn"> Contact</Link>
-    </section>
-  );
-};
+const CTA = () => (
+  <section className="cta">
+    <p className="cta-text">
+      Have a project in mind? <br className="sm:block hidden" /> Let’s build
+      something together! Contact
+    </p>
+    <Link to="/contact" className="btn">
+      Contact
+    </Link>
+  </section>
+);
 
 export default CTA;

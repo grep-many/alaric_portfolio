@@ -1,16 +1,14 @@
-import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import Loader from '@/components/Loader';
-import { Bird, Island, Plane, Sky } from '@/models';
-import HomeInfo from '@/components/HomeInfo';
-import sakura from '@/assets/sakura.mp3';
-import { soundoff, soundon } from '../assets/icons';
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import Loader from "@/components/Loader";
+import { Bird, Island, Plane, Sky } from "@/models";
+import HomeInfo from "@/components/HomeInfo";
+import sakura from "@/assets/sakura.mp3";
+import { soundoff, soundon } from "../assets/icons";
 
 const Home = () => {
   const audioRef = React.useRef(new Audio(sakura));
   const soundRef = React.useRef(null);
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
   const [currentStage, setCurrentStage] = React.useState(1);
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -40,6 +38,8 @@ const Home = () => {
 
   const handleSound = () => {
     if (!soundRef?.current || !audioRef?.current) return;
+    audioRef.current.volume = 0.4;
+    audioRef.current.loop = true;
     if (audioRef.current.paused) {
       audioRef.current.play();
       soundRef.current.src = soundon;

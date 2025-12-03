@@ -10,6 +10,9 @@ export default defineConfig({
   base: `/${baseName}`,
   assetsInclude: ["**/*.glb"],
   plugins: [react(), tailwindcss()],
+  build: {
+    chunkSizeWarningLimit: 2000, // 2MB
+  },
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "./"),

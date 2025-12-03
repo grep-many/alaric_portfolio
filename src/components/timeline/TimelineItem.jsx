@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const TimelineElement = ({
   date,
@@ -33,7 +33,7 @@ const TimelineElement = ({
   return (
     <div
       ref={rootRef}
-      className={`relative group flex ${isLeft && 'flex-row-reverse'} justify-end`}
+      className={`relative group flex ${isLeft && "flex-row-reverse"} justify-end`}
     >
       {/* Icon */}
       <div
@@ -46,21 +46,21 @@ const TimelineElement = ({
           flex justify-center items-center
           border-4 border-white shadow-lg z-20
           max-lg:rotate-0!
-          ${isLeft ? 'rotate-45' : '-rotate-135'}
+          ${isLeft ? "rotate-45" : "-rotate-135"}
           lg:rounded-[50%_50%_50%_10%]!
-          ${inView ? 'motion-safe:animate-rotatePop' : 'opacity-0'} 
+          ${inView ? "motion-safe:animate-rotatePop" : "opacity-0"} 
         `}
-        style={{ ...iconStyle, borderRadius: '50% 50% 50% 10%' }}
+        style={{ ...iconStyle, borderRadius: "50% 50% 50% 10%" }}
       >
         {date && (
           <div
             className={`
               absolute bottom-full mb-2 left-1/2 -translate-x-1/2
               bg-white text-xs px-2 py-1 rounded
-              ${inView && 'animate-fadeInUp'}
+              ${inView && "animate-fadeInUp"}
               pointer-events-none duration-1000
               whitespace-nowrap max-lg:hidden
-              ${isLeft ? '-rotate-45' : 'rotate-135'}
+              ${isLeft ? "-rotate-45" : "rotate-135"}
             `}
           >
             {date}
@@ -69,7 +69,7 @@ const TimelineElement = ({
 
         <span
           className={`size-full max-lg:rotate-0! ${
-            isLeft ? '-rotate-45' : 'rotate-135'
+            isLeft ? "-rotate-45" : "rotate-135"
           }`}
         >
           {icon}
@@ -85,9 +85,9 @@ const TimelineElement = ({
           ${
             inView
               ? isLeft
-                ? 'motion-safe:animate-fadeInUp-inverse'
-                : 'lg:ml-20 motion-safe:animate-fadeInUp'
-              : 'opacity-0 translate-y-4'
+                ? "motion-safe:animate-fadeInUp-inverse"
+                : "lg:ml-20 motion-safe:animate-fadeInUp"
+              : "opacity-0 translate-y-4"
           }
         `}
         style={contentStyle}
