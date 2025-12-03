@@ -6,7 +6,7 @@ import CTA from "../components/CTA";
 const About = () => (
   <section className="max-container">
     <h1 className="head-text">
-      Hello, I'm
+      Hello, I'm{' '}
       <span className="blue-gradient_text font-semibold drop-shadow">
         {name.split(" ")[0]}
       </span>

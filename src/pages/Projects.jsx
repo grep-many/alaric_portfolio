@@ -6,7 +6,7 @@ import CTA from "../components/CTA";
 const Projects = () => (
   <section className="max-container">
     <h1 className="head-text">
-      My
+      My{' '}
       <span className="blue-gradient_text drop-shadow font-semibold">
         Projects
       </span>
