@@ -1,16 +1,171 @@
-# React + Vite
+# Alaric — 3D Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Build](https://img.shields.io/github/actions/workflow/status/grep-many/alaric_portfolio/deploy.yml?label=Build)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![Three.js](https://img.shields.io/badge/Three.js-R3F-black)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1-38BDF8)
+![Vite](https://img.shields.io/badge/Vite-7.2-purple)
 
-Currently, two official plugins are available:
+A fully-animated **3D developer portfolio** built using **React 19**, **Three.js with @react-three/fiber**, **TailwindCSS 4**, and **Vite**.
+Features immersive 3D scenes, smooth page transitions, and a working EmailJS contact form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Overview
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+**Alaric Portfolio** is a modern personal portfolio designed for developers who want a unique 3D aesthetic combined with clean UI components and fast performance.
 
-## Expanding the ESLint configuration
+You get:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🌄 **Interactive 3D hero section** powered by React Three Fiber
+* 🐦 3D models like **Island, Bird, Plane, Sky, Fox**
+* 🎭 Smooth animations with **React Spring (three)**
+* 📩 Working EmailJS-powered contact form
+* 🧭 Multi-page routing via **React Router v7**
+* 🚀 Ultra-fast bundling using **Vite 7**
+
+---
+
+## 🖥️ Desktop Preview
+
+![desktop-preview](./screenshots/preview.png)
+
+---
+
+## 📦 Tech Stack
+
+### **Frontend**
+
+* React 19
+* React Router v7
+* Vite 7
+* TailwindCSS 4
+* React Spring (Three)
+* EmailJS Browser SDK
+
+### **3D & Animation**
+
+* @react-three/fiber
+* @react-three/drei
+* @react-spring/three
+
+### **Developer Tools**
+
+* ESLint 9
+* Prettier 3 + Tailwind Prettier plugin
+* SWC React plugin
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/grep-many/alaric_portfolio.git
+cd alaric_portfolio
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Create Environment File
+
+Create **`.env`** in the root:
+
+```env
+VITE_APP_EMAILJS_SERVICE_ID=your_service_id
+VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+### 4. Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Folder Structure
+
+```bash
+.
+├── config
+│   └── index.js                # Base variables (name, email, baseName)
+├── public                      # Icons, manifest, favicons
+├── src
+│   ├── assets
+│   │   ├── 3d                  # GLB models: island, fox, plane, bird, sky
+│   │   ├── icons               # Tech & social icons
+│   │   ├── images              # Company, hero, meta images
+│   │   └── sakura.mp3          # Sound asset
+│   ├── components              # Navbar, CTA, Loader, HomeInfo...
+│   ├── constants               # skills, projects, experience, social
+│   ├── lib                     # helpers
+│   ├── models                  # JSX wrappers for GLB 3D models
+│   ├── pages                   # Home, About, Projects, Contact
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+```
+
+---
+
+## 🚀 Features
+
+* 🌐 **3D Hero Experience** using GLTF models
+* 🕊️ Animated bird, plane, fox & island environments
+* 🎬 Page transitions with spring animations
+* 📱 Fully responsive modern UI
+* 🧭 Multi-page **React Router 7**
+* 🎨 TailwindCSS 4 utility-first styling
+* 💌 EmailJS contact integration
+* ⚡ Vite-powered fast dev/build
+
+---
+
+## 📬 Contact Form (EmailJS)
+
+Integrated using:
+
+```js
+import emailjs from "@emailjs/browser";
+
+emailjs.send(
+  serviceID,
+  templateID,
+  params,
+  publicKey
+);
+```
+
+Configure via `.env` variables shown above.
+
+---
+
+## 📜 Scripts
+
+```json
+{
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+}
+```
+
+---
+
+## 🪪 License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+This project is open-source under the **MIT License**.
+
+---
